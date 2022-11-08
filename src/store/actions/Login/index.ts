@@ -33,7 +33,7 @@ import {
       }
      
   
-     console.log(user);
+     //console.log(user);
   
       dispatch(setUserLoggedRedux(user));
       dispatch(setIsLoggedRedux(true));

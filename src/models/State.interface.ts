@@ -1,9 +1,7 @@
-import BillState from "./states/BillState.interface";
-import ProductState from "./states/ProductState.interface";
+import RankState from "./states/RankState.interface";
 import UserState from "./states/UserState.interface";
 
 export default interface State {
-    products: ProductState
+    ranks: RankState
     user: UserState
-    orders: BillState
 }

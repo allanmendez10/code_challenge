@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import ItemComponent from '../components/List/Item';
-import ListComponent from '../components/List';
+import RankComponent from '../components/Ranks/rankDetail';
+import ListComponent from '../components/Ranks';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector, useDispatch} from 'react-redux';
 import State from '../models/State.interface';
@@ -39,8 +39,9 @@ export default function PostNavigator() {
        {reduxLoaded?(
          <>
       <Stack.Screen name="MainContainer" component={ListComponent} options={{
-          title: 'The brag house'}} />
-      
+          title: 'Rocket League Ranks'}} />
+
+            <Stack.Screen name="RankContainer" component={RankComponent} options={{ title: 'Rank Detail'}}/> 
        </>
        ):(   
          <>   
