@@ -16,16 +16,16 @@ interface Props {
 const RankDetailComponent = ({rank}:Props):ReactElement<Props> => {
     
     const currentRank = useSelector((state:State) => state.ranks.currentRank);
-    console.log("RankDetailComponent",currentRank)
-  return (
+  
+    return (
     <View  style={styles.container}>
     
-        <Text style={styles.textFields}>{`Division ${currentRank?.division}`}</Text>
-        <Text style={styles.phone}>{`Played ${currentRank?.played}`}</Text>
+        <Text style={styles.textFields}>{`Division: ${currentRank?.division}`}</Text>
+        <Text style={styles.played}>{`Played: ${currentRank?.played}`}</Text>
 
-        <View style={{flexDirection:'row', height: 50, justifyContent: "space-between", marginRight:10 }}>
-        <Text style={styles.orderState}>{"Rank"}</Text>
-        <Text style={styles.date}>{rank?.rank}</Text>
+        <View style={{flexDirection:'row', height: 50, marginRight:10 }}>
+        <Text style={styles.rankLabel}>{"Rank:"}</Text>
+        <Text style={styles.rankValue}>{currentRank?.rank}</Text>
 
         </View>    
 
@@ -52,8 +52,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: '100%',
     fontSize: 17,
-    fontWeight:"bold"
-  },  phone: {
+  },  played: {
     color: 'black',
     textAlign: 'left',
     marginLeft: 5,
@@ -61,18 +60,16 @@ const styles = StyleSheet.create({
     width: '100%',
     fontSize: 17,
   },
-  orderState: {
-    color: 'white',
-    textAlign: 'left',
-    marginLeft: 5,
-    marginBottom: 5,
-    width: '50%',
-    fontSize: 17,
-    backgroundColor:'green',
-    padding:10
-  }, date: {
+  rankLabel: {
     color: 'black',
-    textAlign: "right",
+    textAlign: "left",
+    marginTop: 10,
+    marginLeft:5,
+    fontSize: 17,
+    fontWeight:"bold"
+
+  }, rankValue: {
+    color: 'black',
     marginTop: 10,
     marginRight:10,
     width: '50%',

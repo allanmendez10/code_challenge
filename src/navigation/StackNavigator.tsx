@@ -23,7 +23,7 @@ export default function PostNavigator() {
       initialRouteName="drawer"
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#2E99F7',
+          backgroundColor: '#ff41ff',
         },  
         headerRightContainerStyle:{
           marginRight:10

@@ -10,6 +10,9 @@ import configureStore from './src/store/configureStore';
 const theme = {
   blue: '#0000ff',
   background: '#ccc',
+  colors: {
+    primary: 'pink',
+  }
 };
 
 const store = configureStore();

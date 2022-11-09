@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import { Input, Button} from 'react-native-elements';
 import {useDispatch} from 'react-redux'
 import {login} from '../../store/actions/Login';
-import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const LoginComponent  = () => {
@@ -13,7 +12,6 @@ const LoginComponent  = () => {
     const [isLoading, setButtonLoading] = useState(false)
     const [password, setPassword] = useState("")
     const [user, setUser] = useState("")
-    const navigation = useNavigation();
 
     const validateLogin = (text:string, isUser:boolean = false) =>{
 
@@ -42,7 +40,7 @@ const LoginComponent  = () => {
             <Text style= {styles.title}>The brag house</Text>
             <Input leftIcon={<Icon name='ios-mail-sharp' size={24} color='black'/>}  value = {user} onChangeText = {(text:string)=>validateLogin(text, true)} placeholder="Username"  />
             <Input leftIcon={<Icon name='ios-lock-closed-sharp' size={24} color='black'/>}  value = {password} onChangeText = {(text)=>validateLogin(text)}  placeholder="Password" secureTextEntry={true} />
-            <Button loading = {isLoading} disabled = {isButtonEnable}  onPress = {onLogIn} title="Login"/>        
+            <Button buttonStyle={{backgroundColor: "#ff41ff"}} loading = {isLoading} disabled = {isButtonEnable}  onPress = {onLogIn} title="Login"/>        
             <View style={{flexDirection:'row', height: 50, marginTop:20, alignContent:"center", alignItems:"center"}}>
             </View>
             </View>
@@ -62,7 +60,8 @@ const styles = StyleSheet.create({
         marginBottom: 50,
         width: '100%',
         fontSize:40,
-        textAlign:"center"
+        textAlign:"center",
+        color:'#ff41ff'
     },noAccount: {
         fontSize:18,
         textAlign:"left"
